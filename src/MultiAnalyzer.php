@@ -76,7 +76,7 @@ class MultiAnalyzer
         $trails = [];
 
         foreach ($this->text as $text) {
-            $traisl = array_merge($trails, $text->getTrails());
+            $trails = array_merge($trails, $text->getTrails());
         }
 
         return $trails;
