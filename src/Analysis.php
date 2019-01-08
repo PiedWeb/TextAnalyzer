@@ -14,11 +14,10 @@ class Analysis
         array $expressions,
         int $wordNumber,
         array $trail
-
     ) {
-        $this->expressions     = $expressions;
-        $this->wordNumber      = $wordNumber;
-        $this->trail          = $trail;
+        $this->expressions = $expressions;
+        $this->wordNumber = $wordNumber;
+        $this->trail = $trail;
     }
 
     public function getExpressionsByDensity()
@@ -27,6 +26,7 @@ class Analysis
         foreach ($expressions as $k => $v) {
             $expressions[$k] = round(($v / $this->getWordNumber()) * 10000) / 100;
         }
+
         return $expressions;
     }
 

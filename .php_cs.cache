@@ -1,0 +1,1 @@
+{"php":"7.2.10-0ubuntu0.18.04.1","version":"2.13.1","rules":{"array_syntax":{"syntax":"short"}},"hashes":{"src\/Analyzer.php":157102961,"src\/MultiAnalyzer.php":3961322349,"src\/CleanText.php":493038786,"src\/Analysis.php":3984146708}}

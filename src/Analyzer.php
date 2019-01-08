@@ -15,15 +15,15 @@ class Analyzer
 
     public static function get(
         string $text,
-        bool $onlySentence      = false,
+        bool $onlySentence = false,
         int $expressionMaxWords = 5,
-        int $keepTrail          = 3
+        int $keepTrail = 3
     ) {
         $self = new self($text);
 
-        $self->onlyInSentence     = $onlySentence;
+        $self->onlyInSentence = $onlySentence;
         $self->expressionMaxWords = $expressionMaxWords;
-        $self->keepTrail          = $keepTrail;
+        $self->keepTrail = $keepTrail;
 
         return $self->exec();
     }

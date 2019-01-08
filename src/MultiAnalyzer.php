@@ -16,13 +16,13 @@ class MultiAnalyzer
     protected $text = [];
 
     public function __construct(
-        bool $onlySentence      = false,
+        bool $onlySentence = false,
         int $expressionMaxWords = 5,
-        int $keepTrail          = 3
+        int $keepTrail = 3
     ) {
-        $this->onlyInSentence     = $onlySentence;
+        $this->onlyInSentence = $onlySentence;
         $this->expressionMaxWords = $expressionMaxWords;
-        $this->keepTrail          = $keepTrail;
+        $this->keepTrail = $keepTrail;
     }
 
     /**
