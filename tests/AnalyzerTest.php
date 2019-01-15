@@ -1,4 +1,5 @@
 <?php
+
 namespace PiedWeb\TextAnalyzer\Test;
 
 use PiedWeb\TextAnalyzer\Analysis;
@@ -11,20 +12,32 @@ class CleanTextTest extends \PHPUnit\Framework\TestCase
     {
         $test = new MultiAnalyzer();
 
-        $result = $test->addContent("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...");
+        $result = $test->addContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...');
 
         $this->assertTrue($result instanceof Analysis);
         $this->assertTrue(is_array($result->getExpressions()));
         $this->assertTrue(is_array($result->getTrails()));
         $this->assertTrue(is_int($result->getWordNumber()));
 
-        $result = $test->addContent("Text Analyser : Expression in a text per Usage.");
-        $result = $test->addContent("Please check if test are still running without error (phpunit)");
+        $result = $test->addContent('Text Analyser : Expression in a text per Usage.');
+        $result = $test->addContent('Please check if test are still running without error (phpunit)');
         $results = $test->exec();
 
         $this->assertTrue($results instanceof Analysis);
         $this->assertTrue(is_array($results->getExpressions()));
         $this->assertTrue(is_array($results->getTrails()));
         $this->assertTrue(is_int($results->getWordNumber()));
+
+        $content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+                    .' sed. Text Analyser : Expression in a text per Usage.';
+
+        $kws = Analyzer::get(
+            $content,
+            false,   // only sentences
+            1,      // no expression, just words
+            0      // keep trail
+        );
+
+        $this->assertSame(count($kws->getExpressions(10)), 10);
     }
 }

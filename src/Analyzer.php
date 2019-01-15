@@ -74,7 +74,7 @@ class Analyzer
         $words = explode(' ', trim(strtolower($sentence)));
 
         foreach ($words as $key => $word) {
-            for ($wordNumber = 1; $wordNumber < $this->expressionMaxWords; ++$wordNumber) {
+            for ($wordNumber = 1; $wordNumber <= $this->expressionMaxWords; ++$wordNumber) {
                 $expression = '';
                 for ($i = 0; $i < $wordNumber; ++$i) {
                     if (isset($words[$key + $i])) {
