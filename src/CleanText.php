@@ -86,7 +86,10 @@ class CleanText
 
     public static function removeDate(string $text)
     {
-        $month = '(janvier|january|février|february|mars|march|avril|april|mai|may|juin|june|juillet|july|août|august|septembre|september|octobre|october|novembre|november|décembre|december|jan|fev|feb|mar|avr|apr|jui|jun|juil|jul|aoû|aug|aout|aou|sept|oct|nov|dec|decembre)';
+        $month = '(janvier|january|février|february|mars|march|avril|april|mai|may|juin|june|juillet|july|août|august'
+                .'|septembre|september|octobre|october|novembre|november|décembre|december|jan|fev|feb|mar|avr|apr|jui'
+                .'|jun|juil|jul|aoû|aug|aout|aou|sept|oct|nov|dec|decembre)';
+
         // french format
         $text = preg_replace('/([0-3]?[0-9]\s+)?'.$month.'\s+(20)?[0-3][0-9]/i', ' ', $text);
 
@@ -120,8 +123,10 @@ class CleanText
     public static function stripHtmlTagsOldWay(string $html)
     {
         // Often error because of limitation of JIT
-        $textWithoutInvisible = preg_replace('@<(script|style|head|iframe|noframe|noscript|object|embed|noembed)[^>]*?>((?!<\1).)*<\/\1>@si', ' ', $html);
-        if (false === preg_last_error()) { // var_dump(array_flip(get_defined_constants(true)['pcre'])[preg_last_error()]); die();
+        $regex = '@<(script|style|head|iframe|noframe|noscript|object|embed|noembed)[^>]*?>((?!<\1).)*<\/\1>@si';
+        $textWithoutInvisible = preg_replace($regex, ' ', $html);
+        if (false === preg_last_error()) {
+            // var_dump(array_flip(get_defined_constants(true)['pcre'])[preg_last_error()]); die();
             $html = $textWithoutInvisible;
         }
 
@@ -164,6 +169,8 @@ class CleanText
      */
     public static function removeSrOnly(string $html)
     {
-        return preg_replace('/<span[^>]+class="[^>]*(screen-reader-only|sr-only)[^>]*"[^>]*>[^<]*<\/span>/si', ' ', $html);
+        $regex = '/<span[^>]+class="[^>]*(screen-reader-only|sr-only)[^>]*"[^>]*>[^<]*<\/span>/si';
+
+        return preg_replace($regex, ' ', $html);
     }
 }
