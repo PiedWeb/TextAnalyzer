@@ -13,8 +13,11 @@ class Analyzer
     protected $wordNumber = 0;
     protected $trail = [];
 
+    /**
+     * @param string|\simple_html_dom $text
+     */
     public static function get(
-        string $text,
+        $text,
         bool $onlySentence = false,
         int $expressionMaxWords = 5,
         int $keepTrail = 3
@@ -28,9 +31,12 @@ class Analyzer
         return $self->exec();
     }
 
-    protected function __construct(string $text)
+    /**
+     * @param string|\simple_html_dom $text
+     */
+    protected function __construct($text)
     {
-        $text = CleanText::stripHtmlTags($text);
+        $text = is_string($text) ? CleanText::stripHtmlTags($text) : CleanText::stipHtmlTagsFromDom($text);
         $text = CleanText::fixEncoding($text);
 
         $text = CleanText::removeDate($text);
