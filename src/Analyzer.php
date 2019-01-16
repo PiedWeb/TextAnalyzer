@@ -90,8 +90,7 @@ class Analyzer
 
                 $expression = $this->cleanExpr($expression, $wordNumber);
 
-                if (
-                    empty($expression)
+                if (empty($expression)
                     || ((substr_count($expression, ' ') + 1) != $wordNumber) // We avoid sur-pondération
                     || !preg_match('/[a-z]/', $expression) // We avoid number or symbol only result
                 ) {
@@ -100,7 +99,7 @@ class Analyzer
                     }
                 } else {
                     $plus = 1 + substr_count(CleanText::removeStopWords($expression), ' ');
-                    $this->expressions[$expression] = isset($this->expressions[$expression]) ? $this->expressions[$expression] + $plus : $plus;
+                    $this->expressions[$expression] = (isset($this->expressions[$expression]) ?? 0) + $plus;
                     if ($this->keepTrail > 0 && $this->expressions[$expression] > $this->keepTrail) {
                         $this->trail[$expression][] = $sentence;
                     }
