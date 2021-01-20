@@ -125,7 +125,7 @@ class CleanText
         // Often error because of limitation of JIT
         $regex = '@<(script|style|head|iframe|noframe|noscript|object|embed|noembed)[^>]*?>((?!<\1).)*<\/\1>@si';
         $textWithoutInvisible = preg_replace($regex, ' ', $html);
-        if (false === preg_last_error()) {
+        if (PREG_NO_ERROR === preg_last_error()) {
             // var_dump(array_flip(get_defined_constants(true)['pcre'])[preg_last_error()]); die();
             $html = $textWithoutInvisible;
         }

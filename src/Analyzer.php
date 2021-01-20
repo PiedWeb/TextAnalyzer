@@ -79,7 +79,8 @@ class Analyzer
 
         $words = explode(' ', trim(strtolower($sentence)));
 
-        foreach ($words as $key => $word) {
+        $wordsKey = array_keys($words);
+        foreach ($wordsKey as $key) {
             for ($wordNumber = 1; $wordNumber <= $this->expressionMaxWords; ++$wordNumber) {
                 $expression = '';
                 for ($i = 0; $i < $wordNumber; ++$i) {
@@ -92,7 +93,7 @@ class Analyzer
 
                 if (empty($expression)
                     || ((substr_count($expression, ' ') + 1) != $wordNumber) // We avoid sur-pondération
-                    || !preg_match('/[a-z]/', $expression) // We avoid number or symbol only result
+                    || ! preg_match('/[a-z]/', $expression) // We avoid number or symbol only result
                 ) {
                     if (1 === $wordNumber) {
                         $this->incrementWordNumber(-1);

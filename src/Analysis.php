@@ -37,7 +37,7 @@ class Analysis
 
     public function getExpressions(?int $number = null)
     {
-        return !$number ? $this->expressions : array_slice($this->getExpressions(), 0, $number);
+        return ! $number ? $this->expressions : array_slice($this->getExpressions(), 0, $number);
     }
 
     /**

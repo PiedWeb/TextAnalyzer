@@ -5,10 +5,11 @@
 # Text Analyzer
 
 [![Latest Version](https://img.shields.io/github/tag/PiedWeb/TextAnalyzer.svg?style=flat&label=release)](https://github.com/PiedWeb/TextAnalyzer/tags)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](https://github.com/PiedWeb/TextAnalyzer/blob/master/LICENSE)
-[![Build Status](https://img.shields.io/travis/PiedWeb/TextAnalyzer/master.svg?style=flat)](https://travis-ci.org/PiedWeb/TextAnalyzer)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/PiedWeb/TextAnalyzer/Tests?label=tests)](https://github.com/PiedWeb/TextAnalyzer/actions)
 [![Quality Score](https://img.shields.io/scrutinizer/g/PiedWeb/TextAnalyzer.svg?style=flat)](https://scrutinizer-ci.com/g/PiedWeb/TextAnalyzer)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/PiedWeb/TextAnalyzer.svg?style=flat)](https://scrutinizer-ci.com/g/PiedWeb/TextAnalyzer/code-structure)
+[![Code Coverage](https://codecov.io/gh/PiedWeb/TextAnalyzer/branch/main/graph/badge.svg)](https://codecov.io/gh/PiedWeb/TextAnalyzer/branch/main)
+[![Type Coverage](https://shepherd.dev/github/PiedWeb/TextAnalyzer/coverage.svg)](https://shepherd.dev/github/PiedWeb/TextAnalyzer)
 [![Total Downloads](https://img.shields.io/packagist/dt/piedweb/text-analyzer.svg?style=flat)](https://packagist.org/packages/piedweb/text-analyzer)
 
 Semantic Analysis : Extract Expressions from a text and order it by density.
@@ -58,10 +59,3 @@ Please see [contributing](https://dev.piedweb.com/contributing)
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
-
-[![Latest Version](https://img.shields.io/github/tag/PiedWeb/TextAnalyzer.svg?style=flat&label=release)](https://github.com/PiedWeb/TextAnalyzer/tags)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](https://github.com/PiedWeb/TextAnalyzer/blob/master/LICENSE)
-[![Build Status](https://img.shields.io/travis/PiedWeb/TextAnalyzer/master.svg?style=flat)](https://travis-ci.org/PiedWeb/TextAnalyzer)
-[![Quality Score](https://img.shields.io/scrutinizer/g/PiedWeb/TextAnalyzer.svg?style=flat)](https://scrutinizer-ci.com/g/PiedWeb/TextAnalyzer)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/PiedWeb/TextAnalyzer.svg?style=flat)](https://scrutinizer-ci.com/g/PiedWeb/TextAnalyzer/code-structure)
-[![Total Downloads](https://img.shields.io/packagist/dt/piedweb/text-analyzer.svg?style=flat)](https://packagist.org/packages/piedweb/text-analyzer)
